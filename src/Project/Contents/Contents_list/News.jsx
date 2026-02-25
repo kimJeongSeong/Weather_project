@@ -25,30 +25,33 @@ const News = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { posts, loading, error } = state;
 
-  // 제공해주신 GNews API 키를 적용했습니다.
-  const apiKey = "53152e12d21c8d7c4538322658455f63"; 
+  // 알려주신 NewsData.io API 키를 적용했습니다.
+  const apiKey = "pub_eedbb73e92b049a4b4f9796c8d5e2103"; 
   
   const url = {
-    // 한국어 뉴스를 위해 lang=ko와 q=뉴스(또는 검색어)를 설정했습니다.
-    total: `https://gnews.io/api/v4/search?q=뉴스&lang=ko&max=10&apikey=${apiKey}`,
-    tesla: `https://gnews.io/api/v4/search?q=tesla&lang=en&max=10&apikey=${apiKey}`,
-    top: `https://gnews.io/api/v4/top-headlines?category=business&lang=ko&max=10&apikey=${apiKey}`,
-    apple: `https://gnews.io/api/v4/search?q=apple&lang=en&max=10&apikey=${apiKey}`
+    // 한국 뉴스 (국가: kr)
+    total: `https://newsdata.io/api/1/news?apikey=${apiKey}&q=news&country=kr`,
+    // 테슬라 뉴스 (언어: en)
+    tesla: `https://newsdata.io/api/1/news?apikey=${apiKey}&q=tesla&language=en`,
+    // 비즈니스 카테고리 (국가: kr)
+    top: `https://newsdata.io/api/1/news?apikey=${apiKey}&category=business&country=kr`,
+    // 애플 뉴스 (언어: en)
+    apple: `https://newsdata.io/api/1/news?apikey=${apiKey}&q=apple&language=en`
   };
 
   const fetchPosts = async (type) => {
     dispatch({ type: "start" });
     try {
       const response = await axios.get(url[type]);
-      // GNews API는 response.data.articles 배열에 뉴스 데이터를 담아줍니다.
+      // NewsData.io는 결과 배열을 'results'라는 이름으로 제공합니다.
       dispatch({
         type: "success",
-        payload: response.data.articles,
+        payload: response.data.results,
       });
     } catch (err) {
       console.error("API 에러 발생:", err.response?.data || err.message);
-      // GNews의 에러 구조에 맞춰 에러 메시지를 추출합니다.
-      const errorMsg = err.response?.data?.errors ? err.response.data.errors[0] : err.message;
+      // 에러 메시지 추출 (구조에 따라 조정)
+      const errorMsg = err.response?.data?.message || err.message;
       dispatch({
         type: "error",
         payload: errorMsg,
@@ -57,7 +60,6 @@ const News = () => {
   };
 
   useEffect(() => {
-    // 처음에 Business 카테고리의 한국 뉴스를 불러오도록 설정했습니다.
     fetchPosts("top");
   }, []);
 
@@ -79,19 +81,20 @@ const News = () => {
           </div>
         ) : (
           posts?.map((post, index) => (
-            <div key={post.url || index} className="news_card">
+            <div key={post.article_id || index} className="news_card">
               <figure>
-                {/* GNews API의 이미지 필드명은 'image'입니다. */}
+                {/* NewsData.io의 이미지 필드는 'image_url'입니다. */}
                 <img 
-                  src={post.image || "https://via.placeholder.com/400x250?text=No+Image"} 
+                  src={post.image_url || "https://via.placeholder.com/400x250?text=No+Image"} 
                   alt={post.title}
                   loading="lazy" 
+                  onError={(e) => { e.target.src = "https://via.placeholder.com/400x250?text=No+Image"; }}
                 />
               </figure>
               <div className="news_text">
                 <h2>{post.title}</h2>
                 <p>{post.description || "본문 요약 내용이 없습니다."}</p>
-                <a href={post.url} target="_blank" rel="noopener noreferrer">
+                <a href={post.link} target="_blank" rel="noopener noreferrer">
                   LINK
                 </a>
               </div>
