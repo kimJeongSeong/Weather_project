@@ -1,0 +1,14 @@
+.frog_game_window {
+    display: flex;
+    flex-Direction: column; 
+    align-Items: center;
+    margin-top: 30px;
+}
+
+.frog_game_total {
+    position: relative;
+    z-index: 1; /* 메뉴보다 낮은 순위 */
+    margin-top: 80px;
+}
+.frog_game_total canvas {
+}

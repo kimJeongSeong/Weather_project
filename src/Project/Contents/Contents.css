@@ -1,0 +1,112 @@
+/* --- [0. Fonts 설정 유지] --- */
+@font-face {
+    font-family: 'PfStardust';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/PFStardust.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DepartureMono';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2409-1@1.0/DepartureMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tangba';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-4@1.1/Tangba12.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+
+.contents_nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  background-image: url("/menu_var.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  margin-bottom: 25px;
+  transform: translateY(18px);
+}
+
+.contents_nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+
+.contents_nav ul li {
+  height: 80px;
+  overflow: hidden; 
+}
+
+.contents_window {
+  margin-top: 40px;
+}
+
+.contents_nav ul li a {
+  display: block;
+  font-size: 18px;
+  letter-spacing: 3px;
+  padding: 20px 0px; 
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-family: "PfStardust", sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow:
+    -3px -3px 0 #355245,
+    0px -3px 0 #355245,
+    3px -3px 0 #355245,
+    -3px 0px 0 #355245,
+    3px 0px 0 #355245,
+    -3px 3px 0 #355245,
+    0px 3px 0 #355245,
+    3px 3px 0 #355245;
+  font-weight: bold; 
+}
+
+.contents_nav ul li:nth-child(1) { 
+  padding-left: 12px;
+background-image: url("/news_btn.png");
+  background-size: cover;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+}
+.contents_nav ul li:nth-child(2) {
+  background-image: url("/game_btn.png");
+  background-size: cover;
+  width: 110px;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated; 
+}
+.contents_nav ul li:nth-child(3) { 
+  background-image: url("/typing_btn.png");
+  background-size: cover;
+  width: 110px;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+}
+.contents_nav ul li:nth-child(4) { 
+  background-image: url("/thanks.png");
+  width: 160px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  padding-right: 12px;
+}

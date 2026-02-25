@@ -1,0 +1,192 @@
+@font-face {
+  font-family: "RoundedFixedsys";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PfStardust30";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2506-1@1.0/PFStardustExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+.weather_total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.weather_search {
+  background-image: url("/bookstand.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  min-height: 163px;
+  border-radius: 12px;
+
+}
+
+.weather_search form {
+  width: 280px;
+  display: flex;
+  gap: 5px;
+  border: 4px solid salmon;
+  border-radius: 9px;
+  justify-content: center;
+ margin-bottom: 24px;
+  margin-left: -5px
+}
+
+.weather_search input {
+  flex: 1;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+.weather_search form .search_btn {
+  width: 30px;
+  height: 30px;
+  background-image: url("/search_btn.png");
+  background-color: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+.weather_search form .currnet_btn {
+  width: 30px;
+  height: 30px;
+  background-image: url("/current_btn.png");
+  background-color: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+
+.weather_contents_1 {
+  background-image: url("/weather_window.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  width: 100%;
+  padding: 32px;
+  text-align: center;
+}
+
+.weather_contents_1 p {
+  color: #fff;
+  text-shadow:
+    -2px -2px 0 #4b3621,
+    0px -2px 0 #4b3621,
+    2px -2px 0 #4b3621,
+    -2px 0px 0 #4b3621,
+    2px 0px 0 #4b3621,
+    -2px 2px 0 #4b3621,
+    0px 2px 0 #4b3621,
+    2px 2px 0 #4b3621;
+  font-weight: bold;
+  margin-top: 9px;
+  font-size: 1.3rem;
+}
+
+.weather_contents_1 h2 {
+  font-size: 1.3rem;
+  color: #fff;
+  font-family: "PfStardust30", sans-serif;
+  text-shadow:
+    -3px -3px 0 #4b3621,
+    0px -3px 0 #4b3621,
+    3px -3px 0 #4b3621,
+    -3px 0px 0 #4b3621,
+    3px 0px 0 #4b3621,
+    -3px 3px 0 #4b3621,
+    0px 3px 0 #4b3621,
+    3px 3px 0 #4b3621;
+  font-weight: bold;
+}
+
+
+.weather_icon {
+  width: 200px;
+  height: 150px;
+}
+.weather_icon img {
+  width: 100px;
+  height: 100px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  width: 50%;
+  height: auto;
+  margin: 30px 0px 0px 110px;
+}
+
+.weather_contents_2 {
+  background-image: url("/calendar.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  width: 100%;
+  padding: 19px;
+  margin-top: -15px;
+}
+
+.weather_contents_2 h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #fff;
+  text-align: center;
+  font-family: "RoundedFixedsys", sans-serif;
+  text-shadow:
+    -2px -2px 0 #355245,
+    0px -2px 0 #355245,
+    2px -2px 0 #355245,
+    -2px 0px 0 #355245,
+    2px 0px 0 #355245,
+    -2px 2px 0 #355245,
+    0px 2px 0 #355245,
+    2px 2px 0 #355245;
+  font-weight: bold;
+}
+
+.weather_week ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  list-style: none;
+  padding-top: 10px;
+}
+
+.weather_week li {
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.forecast_mini_icon {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+}
+
