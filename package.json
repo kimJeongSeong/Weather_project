@@ -2,7 +2,7 @@
   "name": "weather_project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://kimJeongSeong.github.io/weather_project_/",
+  "homepage": "https://github.com/kimJeongSeong/Weather_project.git",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
