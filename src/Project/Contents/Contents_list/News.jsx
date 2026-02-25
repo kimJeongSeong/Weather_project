@@ -25,38 +25,40 @@ const News = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { posts, loading, error } = state;
 
-  // NewsAPI 전용 키를 반영했습니다.
-  const apiKey = "0fa0a392a92546129aaf2e4df007483c"; 
+  // 제공해주신 GNews API 키를 적용했습니다.
+  const apiKey = "53152e12d21c8d7c4538322658455f63"; 
   
-  // NewsAPI 형식으로 URL을 다시 복구했습니다.
   const url = {
-    total: `https://newsapi.org/v2/everything?q=all&apiKey=${apiKey}&pageSize=10`,
-    tesla: `https://newsapi.org/v2/everything?q=tesla&apiKey=${apiKey}&pageSize=10`,
-    top: `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiKey}&pageSize=10`,
-    apple: `https://newsapi.org/v2/everything?q=apple&apiKey=${apiKey}&pageSize=10`
+    // 한국어 뉴스를 위해 lang=ko와 q=뉴스(또는 검색어)를 설정했습니다.
+    total: `https://gnews.io/api/v4/search?q=뉴스&lang=ko&max=10&apikey=${apiKey}`,
+    tesla: `https://gnews.io/api/v4/search?q=tesla&lang=en&max=10&apikey=${apiKey}`,
+    top: `https://gnews.io/api/v4/top-headlines?category=business&lang=ko&max=10&apikey=${apiKey}`,
+    apple: `https://gnews.io/api/v4/search?q=apple&lang=en&max=10&apikey=${apiKey}`
   };
 
   const fetchPosts = async (type) => {
     dispatch({ type: "start" });
     try {
       const response = await axios.get(url[type]);
-      // NewsAPI는 response.data.articles에 데이터를 담아줍니다.
+      // GNews API는 response.data.articles 배열에 뉴스 데이터를 담아줍니다.
       dispatch({
         type: "success",
         payload: response.data.articles,
       });
     } catch (err) {
       console.error("API 에러 발생:", err.response?.data || err.message);
-      // 배포 환경(GitHub Pages)이라면 여기서 426 에러 메시지가 출력될 것입니다.
+      // GNews의 에러 구조에 맞춰 에러 메시지를 추출합니다.
+      const errorMsg = err.response?.data?.errors ? err.response.data.errors[0] : err.message;
       dispatch({
         type: "error",
-        payload: err.response?.data?.message || err.message,
+        payload: errorMsg,
       });
     }
   };
 
   useEffect(() => {
-    fetchPosts("apple");
+    // 처음에 Business 카테고리의 한국 뉴스를 불러오도록 설정했습니다.
+    fetchPosts("top");
   }, []);
 
   return (
@@ -72,21 +74,16 @@ const News = () => {
           <div className="status_msg"><h2>데이터 로딩 중...</h2></div>
         ) : error ? (
           <div className="status_msg">
-            <h2>에러 발생: {error}</h2>
-            {/* 배포 환경 에러일 경우 사용자에게 안내 문구를 띄워줍니다. */}
-            {error.includes("426") && (
-              <p style={{fontSize: "0.8rem", color: "white"}}>
-                NewsAPI 무료 플랜은 배포 환경에서 제한될 수 있습니다.
-              </p>
-            )}
+            <h2>에러 발생</h2>
+            <p style={{ color: "#ffcfcf", marginTop: "10px" }}>{error}</p>
           </div>
         ) : (
           posts?.map((post, index) => (
             <div key={post.url || index} className="news_card">
               <figure>
-                {/* NewsAPI는 이미지 경로 이름이 'urlToImage'입니다. */}
+                {/* GNews API의 이미지 필드명은 'image'입니다. */}
                 <img 
-                  src={post.urlToImage || "https://via.placeholder.com/400x250?text=No+Image"} 
+                  src={post.image || "https://via.placeholder.com/400x250?text=No+Image"} 
                   alt={post.title}
                   loading="lazy" 
                 />
