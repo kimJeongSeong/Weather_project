@@ -1,7 +1,8 @@
 # 🐸 Weather Pixel Room 🌿
 
 ![홈페이지 메인 화면] 
-<img width="1145" height="722" alt="site_window" src="https://github.com/user-attachments/assets/4b326a46-3953-400f-9fd0-bab8b53f81c1" />
+<img width="1160" height="729" alt="site_window" src="https://github.com/user-attachments/assets/2694504b-c8f6-4b73-82d7-0660d68a0f7b" />
+
 
 > **"단순한 날씨 데이터를 넘어, 창문 너머의 감성을 시각화하다"**
 > 
