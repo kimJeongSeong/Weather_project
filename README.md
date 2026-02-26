@@ -2,7 +2,7 @@
 
 ![홈페이지 메인 화면] 
 <div align="center">
-  <img width="80%" alt="site_window" src="https://github.com/user-attachments/assets/e7a0a318-407e-47f9-a68c-3bebd4f6f54c" />
+ <img width="80%" alt="site_window" src="https://github.com/user-attachments/assets/03d5ff93-442f-417e-9c37-04cf2ca12fa4" />
 </div>
 
 
