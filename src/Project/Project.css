@@ -38,7 +38,6 @@ img {
 
 /* --- [2. Desktop Layout (1025px 이상)] --- */
 .main_tile {
-  /* . 제거 */
   background-image: url("/main_tile.png");
   background-position: center;
   background-size: 30%;
@@ -56,7 +55,6 @@ img {
   height: 880px;
   margin: 40px auto;
   padding: 20px;
-  /* . 제거 */
   background-image: url("/total_window.png");
   background-size: 100% 100%;
   background-position: center;
@@ -66,7 +64,6 @@ img {
 
 .main_title {
   text-align: center;
-  /* . 제거 */
   background-image: url("/title_light.png");
   background-size: cover;
   background-position: center;
@@ -83,7 +80,6 @@ img {
 
 .contents {
   margin-top: 16px;
-  /* . 제거 */
   background-image: url("/main.png");
   background-size: 100% 100%;
   image-rendering: pixelated;
@@ -228,7 +224,7 @@ img {
   }
 
   .weather_contents_1 {
-    background-size: 50% 100% !important;
+    background-size: 55% 100% !important;
     height: 100%;
     width: 90% !important;
   }
@@ -236,10 +232,6 @@ img {
     background-size: 110% 116% !important;
     width: 60% !important;
     height: 200% !important;
-  }
-
-  .weather_icon img {
-    transform: translateX(15vh);
   }
 
   .contents_home {
@@ -297,8 +289,10 @@ img {
     transform: translateY(4vh);
   }
 
+  /* ✅ 수정: translateY(0.5vh) → none으로 변경 */
   .weather_week ul {
-    transform: translateY(0.5vh);
+    padding-top: 30px !important;
+    transform: none;
   }
 
   .typing-container {
@@ -316,25 +310,81 @@ img {
 
   .thanks_total {
     width: 90% !important;
-    transform: translateY(5vh);
+    transform: translateY(5%);
   }
   .thanks_total h1 {
     transform: translateY(0.5vh);
     margin: 0 auto;
   }
   .thanks_text {
+    width: 90%;
     margin: 0 auto;
   }
 }
 
+/* --- [4-1. 중간 구간 상단 (911~948px) - main 높이 보정] --- */
+@media screen and (min-width: 911px) and (max-width: 948px) {
+  .main {
+     background-image: url("/total_window_t_m.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    height: auto !important;
+  }
+  .main_tile {
+    height: auto !important;
+    min-height: calc(100vh - 200px) !important;
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 815px) and (max-width: 948px) {
+  .main {
+     background-image: url("/total_window_t_m_3.png") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    height: auto !important;
+    min-height: calc(150vh - 100px) !important;
+    padding-bottom: 80px !important;
+  }
+  }
+
+/* --- [4-2. 중간 구간 (481~910px) - 높이를 콘텐츠에 맞게] --- */
+@media screen and (min-width: 481px) and (max-width: 910px) {
+  .main {
+    background-image: url("/total_window_t_m.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    height: auto !important;
+    min-height: unset !important;
+    padding-bottom: 40px !important;
+  }
+  .main_tile {
+    height: auto !important;
+    min-height: unset !important;
+    overflow: hidden !important;
+    padding-bottom: 30px;
+  }
+  .contents_window {
+    transform: translateY(-8px) !important;
+  }
+ 
+}
+
+/* --- [4-3. 가로모드 (768~1024px landscape)] --- */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .main {
-    height: 80%;
+    height: auto !important;
+    padding-bottom: 60px;
   }
   .contents_nav ul {
     transform: translateY(1vh) !important;
   }
-
   .contents {
     transform: translateY(-6vh) !important;
   }
@@ -344,23 +394,33 @@ img {
   .thanks_total h1 {
     transform: translateY(1vh) !important;
   }
-  
   .news_contents {
     transform: translate(0, 4vh) !important;
   }
 }
+@media screen and (min-width: 857px) and (max-width: 948px) {
+ .main {
+  background-image: url("/total_window_t_m_2.png") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
 
+ }
+}
+
+/* --- [4-4. 작은 가로모드 (max-height 480px landscape)] --- */
 @media screen and (max-height: 480px) and (orientation: landscape) {
   .main {
     height: 370vh;
   }
-
+  
   .main_tile {
     overflow: hidden;
     height: 360vh;
     border-radius: 0;
   }
-
+  
   .contents {
     height: 50vh;
     transform: translate(0vh, -20vh);
@@ -395,13 +455,13 @@ img {
   .frog_game_total {
     transform: translateY(13vh) !important;
   }
-  
+
   .contents_nav ul li a {
     transform: translate(0, 4vh);
     font-size: 0.9rem !important;
     padding: 0 !important;
   }
-  
+
   .thanks_total {
     width: 80% !important;
     transform: translateY(10vh) !important;
@@ -415,6 +475,16 @@ img {
 }
 
 /* --- [5. Small Mobile (480px 이하)] --- */
+@media screen and (max-width: 540px) and (min-width: 480px) {
+ .weather_week ul {
+   transform: translate(-5%, 0%);
+
+ }
+ .weather_contents_1 {
+  background-size: 88% 100% !important;
+
+}
+}
 @media screen and (max-width: 480px) {
   .main {
     background-image: url("/total_window_m.png");
@@ -431,14 +501,14 @@ img {
   }
 
   .weather_contents_1 {
-    width: 220% !important;
+    width: 150% !important;
     height: 31% !important;
   }
   .weather_contents_1 h2 {
     transform: translate(0vh, -0.7vh);
   }
   .weather_contents_1 p {
-    transform: translate(0vh, -6vh);
+    transform: translate(0vh, -5vh);
   }
   .weather_contents_2 {
     background-image: url("/calendar.png") !important;
@@ -447,8 +517,9 @@ img {
     height: 1050% !important;
   }
 
+  /* ✅ 수정: width 70% → 100%, margin auto 유지 */
   .weather_week ul {
-    width: 70%;
+    width: 80%;
     margin: 60px auto;
   }
 
@@ -516,10 +587,6 @@ img {
     width: 90%;
   }
 
-  .weather_icon img {
-    transform: translate(26vh, -4vh);
-  }
-
   .contents_home {
     transform: translateY(-20px);
     width: 80%;
@@ -572,4 +639,14 @@ img {
   .thanks_text {
     width: 80% !important;
   }
+
+}
+@media screen and (max-width: 480px) {
+  .thanks_total {
+        overflow-y: auto;
+        width: 80% !important;
+        transform: translateX(2vh);
+        overflow: hidden;
+    }
+
 }
