@@ -57,7 +57,7 @@ Project
 ## 🛠 Tech Stack & Info
 * **Production Period**: 17일
 * **Design Tools**: Procreate, Photoshop, Illustrator
-* **Development**: React, HTML, CSS, Framer Motion, GSAP
+* **Development**: React, HTML, CSS
 * **Contribution**: 기획 100% / 디자인 100% / 개발 100%
 
 ---
