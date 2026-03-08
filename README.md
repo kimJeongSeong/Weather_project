@@ -3,10 +3,11 @@
 > **"창밖의 날씨와 함께 쉬어가는, 개구리가 사는 초록빛 픽셀 룸으로 여러분을 초대합니다."**
 
 <p align="center">
-  <img src="[https://kimjeongseong.github.io/Weather_project/thumbnail.png](https://kimjeongseong.github.io/Weather_project/thumbnail.png)" width="100%" alt="Weather Pixel Room Main">
+  <img width="100%" alt="Thumbnail_img" src="https://github.com/user-attachments/assets/2b8ec615-a969-4c41-840e-dfa85c3f8ba8" />
 </p>
 
-### 🌐 [🌐 Step Inside the Frog's Room](https://kimjeongseong.github.io/Weather_project/)
+
+### [🌐 Step Inside the Frog's Room](https://kimjeongseong.github.io/Weather_project/)
 
 실시간 날씨 데이터를 바탕으로 사용자의 공간을 아늑한 픽셀 아트 룸으로 변화시키는 인터랙티브 웹 프로젝트입니다. 모든 그래픽 요소는 직접 도트 작업(Pixel Art)을 거쳐 제작되어, 디자이너의 방에 놀러 온 듯한 몰입감을 제공합니다.
 
@@ -18,7 +19,7 @@
     * **Weather Window**: 실시간 날씨를 보여주는 창문 연출 ☀️🌧️
     * **Weekly Calendar**: 주간 예보를 보여주는 귀여운 달력 🗓️
     * **Living Details**: 에어컨 옆 개구리 시계와 숨 쉬는 개구리 애니메이션으로 생동감 부여 ⏰
-    * **TMI Frame**: 방문객을 제작자의 방으로 초대하는 듯한 자기소개 액자 🖼️
+    * **TMI Frame**: 방문객을 개발자의 방으로 초대하는 듯한 자기소개 액자 🖼️
     * **Monitor Menu**: 화분을 클릭해 즐기는 뉴스, 게임, 타이핑 연습 및 프로젝트 정보 🪴
 
 ---
@@ -28,6 +29,12 @@
 Project
 ├── 📂 Contents
 │   ├── 📂 Contents_list
+│   │   ├── 📄 Contests_total.css
+│   │   ├── 📄 Fortune.jsx
+│   │   ├── 📄 Game.css
+│   │   ├── 📄 Game.jsx
+│   │   ├── 📄 News.jsx
+│   │   └── 📄 Thanks.jsx
 │   ├── 📄 Contents_home.jsx
 │   ├── 📄 Contents_nav.jsx
 │   └── 📄 Contents.css
@@ -63,9 +70,9 @@ Project
 ---
 
 ## 👨‍💻 Creator Note
-> **"복잡한 도시의 소음에서 잠시 벗어나, 싱그러운 초록이 가득한 제 방에서 쉬어가세요."**
+> **"복잡한 도시의 소음에서 잠시 벗어나, 싱그러운 초록이 가득한 방에서 쉬어가세요."**
 >
-> 문득 창밖의 날씨가 궁금해질 때, 혹은 누군가의 온기가 담긴 아늑한 공간이 그리울 때 언제든 들러주셨으면 합니다. 직접 하나하나 정성껏 찍어낸 픽셀 도트와 숨 쉬는 개구리 친구들이 여러분을 기다리고 있어요. 
+> 문득 창밖의 날씨가 궁금해질 때, 혹은 누군가의 온기가 담긴 아늑한 공간이 그리울 때 언제든지 들러주셨으면 합니다. 직접 하나하나 정성껏 찍어낸 픽셀 도트와 숨 쉬는 개구리 친구들이 여러분을 기다리고 있어요. 
 > 
 > 화려한 기술보다 중요한 건, 이 공간을 방문한 여러분이 느낄 **'기분 좋은 편안함'**이라고 믿습니다. 잎사귀 사이로 비치는 햇살처럼 따뜻한 시간이 되시길 바랍니다. 🐸🌿✨
 
